@@ -5,6 +5,7 @@ namespace PlayingCardsAPI.Entities
 		Hearts,
 		Diamonds,
 		Clubs,
-		Spades
+		Spades,
+		Joker
 	}
 }
