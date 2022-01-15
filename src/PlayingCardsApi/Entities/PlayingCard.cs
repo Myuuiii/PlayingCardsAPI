@@ -31,43 +31,44 @@ namespace PlayingCardsAPI.Entities
 				case CardValue.Joker: valueName = null; break;
 			}
 
-			this.Code = $"{suitName[0]}{valueName}";
+			this.Code = $"{valueName}{suitName[0]}";
 		}
 
 		public PlayingCard(String cardCode)
 		{
 			this.Code = cardCode;
 
-			switch (cardCode[0])
-			{
-				case 'C': this.Suit = SuitValue.Clubs; break;
-				case 'D': this.Suit = SuitValue.Diamonds; break;
-				case 'H': this.Suit = SuitValue.Hearts; break;
-				case 'S': this.Suit = SuitValue.Spades; break;
-				case 'J': this.Suit = SuitValue.Joker; break;
-			}
 			if (cardCode.Length == 2)
 			{
 				switch (cardCode[1])
 				{
-					case '2': this.Value = CardValue.Two; break;
-					case '3': this.Value = CardValue.Three; break;
-					case '4': this.Value = CardValue.Four; break;
-					case '5': this.Value = CardValue.Five; break;
-					case '6': this.Value = CardValue.Six; break;
-					case '7': this.Value = CardValue.Seven; break;
-					case '8': this.Value = CardValue.Eight; break;
-					case '9': this.Value = CardValue.Nine; break;
-					case 'T': this.Value = CardValue.Ten; break;
-					case 'J': this.Value = CardValue.Jack; break;
-					case 'Q': this.Value = CardValue.Queen; break;
-					case 'K': this.Value = CardValue.King; break;
-					case 'A': this.Value = CardValue.Ace; break;
+					case 'C': this.Suit = SuitValue.Clubs; break;
+					case 'D': this.Suit = SuitValue.Diamonds; break;
+					case 'H': this.Suit = SuitValue.Hearts; break;
+					case 'S': this.Suit = SuitValue.Spades; break;
+					case 'J': this.Suit = SuitValue.Joker; break;
 				}
 			}
 			else
 			{
 				this.Value = CardValue.Joker;
+			}
+
+			switch (cardCode[0])
+			{
+				case '2': this.Value = CardValue.Two; break;
+				case '3': this.Value = CardValue.Three; break;
+				case '4': this.Value = CardValue.Four; break;
+				case '5': this.Value = CardValue.Five; break;
+				case '6': this.Value = CardValue.Six; break;
+				case '7': this.Value = CardValue.Seven; break;
+				case '8': this.Value = CardValue.Eight; break;
+				case '9': this.Value = CardValue.Nine; break;
+				case 'T': this.Value = CardValue.Ten; break;
+				case 'J': this.Value = CardValue.Jack; break;
+				case 'Q': this.Value = CardValue.Queen; break;
+				case 'K': this.Value = CardValue.King; break;
+				case 'A': this.Value = CardValue.Ace; break;
 			}
 		}
 
