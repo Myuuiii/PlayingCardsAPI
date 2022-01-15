@@ -24,6 +24,7 @@ namespace PlayingCardsAPI.Repositories
 			_decks.Add(deck);
 		}
 
+		/// <inheritdoc />
 		public async Task<bool> DeckContainsCardAsync(Guid deckId, string cardCode)
 		{
 			int index = _decks.FindIndex(d => d.Id == deckId);
@@ -31,6 +32,7 @@ namespace PlayingCardsAPI.Repositories
 			return deck.ContainsCard(cardCode);
 		}
 
+		/// <inheritdoc />
 		public async Task<bool> DeckExistsAsync(Guid deckId)
 		{
 			return _decks.Any(d => d.Id == deckId);
